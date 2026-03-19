@@ -329,9 +329,18 @@ a {
   }
 
   .about-grid {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     gap: 2rem;
     text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .about-grid > div {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
   }
 
   .about-image-wrapper {
