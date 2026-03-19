@@ -34,7 +34,7 @@ const About = () => {
 
           <div>
             <p style={{ fontWeight: '600', marginBottom: '0.5rem' }}>About</p>
-            <h2 className="section-title" style={{ marginBottom: '1.5rem' }}>About Me</h2>
+            <h2 className="section-title" style={{ marginBottom: '1.5rem' }} data-aos="fade-up">About Me</h2>
             <p style={{ color: 'var(--text-muted)', fontSize: '1.1rem', marginBottom: '1.5rem' }}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce varius faucibus massa sollicitudin amet augue. Nibh metus a semper purus mauris duis. Lorem eu neque, tristique quis duis. Nibh scelerisque ac adipiscing velit non nulla in amet pellentesque. 
             </p>

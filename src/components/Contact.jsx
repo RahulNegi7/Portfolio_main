@@ -2,7 +2,7 @@ import React from 'react';
 
 const Contact = () => {
   return (
-    <section id="contact" className="section section-dark">
+    <section id="contact" className="section section-dark" data-aos="fade-up">
       <div className="container" style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}>
         <p style={{ fontWeight: '600', marginBottom: '0.5rem' }}>Get In Touch</p>
         <h2 className="section-title" style={{ marginBottom: '1rem' }}>Contact me</h2>

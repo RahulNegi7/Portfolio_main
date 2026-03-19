@@ -27,7 +27,7 @@ const Projects = () => {
     <section id="projects" className="section section-dark">
       <div className="container">
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '3rem' }}>
-          <div>
+          <div data-aos="fade-up">
             <p style={{ fontWeight: '600', marginBottom: '0.5rem' }}>Recent Projects</p>
             <h2 className="section-title" style={{ margin: 0 }}>My Portfolio</h2>
           </div>
@@ -42,7 +42,7 @@ const Projects = () => {
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
           {projects.map((project, index) => (
-            <div key={index} style={{ 
+            <div key={index} data-aos="fade-up" style={{ 
               background: 'var(--bg-dark)', 
               borderRadius: '10px', 
               overflow: 'hidden',

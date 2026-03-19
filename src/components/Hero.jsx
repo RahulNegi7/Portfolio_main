@@ -162,7 +162,7 @@ const FractalTree = () => {
 
 const Hero = () => {
   return (
-    <section id="home" className="section section-dark" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center' }}>
+    <section id="home" className="section section-dark" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center' }} data-aos="fade-up">
       <div className="container">
         <div style={{ display: 'grid', gridTemplateColumns: 'minmax(400px, 1fr) 1fr', gap: '3rem', alignItems: 'center' }}>
           
