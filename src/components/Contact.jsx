@@ -9,7 +9,7 @@ const Contact = () => {
         <p style={{ color: 'var(--text-muted)', marginBottom: '3rem' }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         
         <form style={{ display: 'grid', gap: '1.5rem', textAlign: 'left' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
+          <div className="contact-grid">
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
               <label htmlFor="firstName" style={{ fontWeight: '500' }}>First name</label>
               <input type="text" id="firstName" name="firstName" style={{ padding: '0.8rem 1rem', borderRadius: '5px', border: '1px solid rgba(255,255,255,0.2)', background: 'transparent', color: 'var(--text-light)', fontSize: '1rem' }} />
@@ -20,7 +20,7 @@ const Contact = () => {
             </div>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
+          <div className="contact-grid">
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
               <label htmlFor="email" style={{ fontWeight: '500' }}>Email</label>
               <input type="email" id="email" name="email" style={{ padding: '0.8rem 1rem', borderRadius: '5px', border: '1px solid rgba(255,255,255,0.2)', background: 'transparent', color: 'var(--text-light)', fontSize: '1rem' }} />

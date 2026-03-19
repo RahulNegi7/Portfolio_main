@@ -297,7 +297,17 @@ a {
   justify-content: center;
 }
 
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
 @media (max-width: 900px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+  
   .section-title {
     font-size: 2rem;
   }
