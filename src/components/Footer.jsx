@@ -3,26 +3,12 @@ import { Github, Linkedin, Twitter, Dribbble } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer style={{ background: 'var(--bg-light)', padding: '4rem 0 2rem 0', color: 'var(--text-light)' }}>
+    <footer style={{ background: 'var(--bg-light)', padding: '1rem 0', color: 'var(--text-light)' }}>
       <div className="container">
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '4rem', flexWrap: 'wrap', gap: '2rem' }}>
-          <a href="#home" className="nav-logo" style={{ color: 'var(--text-light)', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '10px' }}>
-            <div style={{ width: '40px', height: '40px', background: 'var(--accent-purple)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff' }}>R</div>
-            <span style={{ fontSize: '1.2rem', fontWeight: '700' }}>Rahul Negi</span>
-          </a>
-          <div style={{ display: 'flex', gap: '1.5rem' }}>
-            <a href="https://www.instagram.com/_rahul__.negi/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-light)' }}><InstagramIcon /></a>
-            <a href="https://x.com/RahulNe8" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-light)' }}><XIcon /></a>
-            <a href="https://www.linkedin.com/in/rahul-negi-961b88275/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-light)' }}><Linkedin size={24} /></a>
-          </div>
-        </div>
-        <div style={{ borderTop: '1px solid rgba(0,0,0,0.1)', paddingTop: '2rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '0.9rem', color: 'var(--text-muted)', flexWrap: 'wrap', gap: '1rem' }}>
-          <p>Made with 💖 by Rahul Negi</p>
-          <div style={{ display: 'flex', gap: '1.5rem' }}>
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Service</a>
-            <a href="#">Cookies Settings</a>
-          </div>
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '2rem', minHeight: '40px' }}>
+          <a href="https://www.instagram.com/_rahul__.negi/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-light)' }}><InstagramIcon /></a>
+          <a href="https://x.com/RahulNe8" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-light)' }}><XIcon /></a>
+          <a href="https://www.linkedin.com/in/rahul-negi-961b88275/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-light)' }}><Linkedin size={24} /></a>
         </div>
       </div>
     </footer>
