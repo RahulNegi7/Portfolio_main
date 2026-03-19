@@ -13,16 +13,10 @@ const FractalTree = () => {
     let width, height;
     
     const resizeCanvas = () => {
-      const dpr = window.devicePixelRatio || 1;
       width = canvas.parentElement.clientWidth;
       height = canvas.parentElement.clientHeight;
-      
-      // Fix for High-DPI / Retina mobile screens causing blur
-      canvas.width = width * dpr;
-      canvas.height = height * dpr;
-      
-      // Scale canvas internal context back down to CSS dimensions
-      ctx.scale(dpr, dpr);
+      canvas.width = width;
+      canvas.height = height;
     };
     
     resizeCanvas();
@@ -31,14 +25,10 @@ const FractalTree = () => {
     let animationFrame;
     let t = 0;
 
-    const drawBranch = (h, theta, currentLineWidth) => {
+    const drawBranch = (h, theta) => {
       h *= 0.66; // Branch length reduction factor
       
-      if (h > 2.5) { // Base stop 
-        // Thinner branches the further out we go
-        const newWidth = currentLineWidth * 0.75;
-        ctx.lineWidth = Math.max(0.5, newWidth);
-        
+      if (h > 2) {
         ctx.save();
         ctx.rotate(theta);
         
@@ -48,7 +38,7 @@ const FractalTree = () => {
         ctx.stroke();
         
         ctx.translate(0, -h);
-        drawBranch(h, theta, newWidth);
+        drawBranch(h, theta);
         ctx.restore();
         
         ctx.save();
@@ -60,7 +50,7 @@ const FractalTree = () => {
         ctx.stroke();
         
         ctx.translate(0, -h);
-        drawBranch(h, theta, newWidth);
+        drawBranch(h, theta);
         ctx.restore();
       }
     };
@@ -75,10 +65,8 @@ const FractalTree = () => {
       
       t += 0.005; // Increase time for medium speed
       
-      ctx.strokeStyle = '#ffffff'; 
-      ctx.lineWidth = 2.5; // Thicker trunk
-      ctx.shadowColor = 'rgba(67, 206, 162, 0.4)'; // Ocean Green glowing effect
-      ctx.shadowBlur = 10;
+      ctx.strokeStyle = 'rgb(255, 255, 255)'; // White tree lines as per Figma
+      ctx.lineWidth = 1.5;
       
       ctx.save();
       // Start tree from bottom center of the canvas component
@@ -93,7 +81,7 @@ const FractalTree = () => {
       ctx.stroke();
       
       ctx.translate(0, -initialBranchLength);
-      drawBranch(initialBranchLength, theta, 2.5); // Pass the heavy start width into the recursion
+      drawBranch(initialBranchLength, theta);
       ctx.restore();
       
       animationFrame = requestAnimationFrame(animate);
