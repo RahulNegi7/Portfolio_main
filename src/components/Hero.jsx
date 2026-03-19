@@ -68,7 +68,7 @@ const FractalTree = () => {
         a = baseAngle + Math.sin(t) * 10;
       } else {
         // Desktop: Large autonomous sine wave spreading
-        a = 55 + Math.sin(t) * 35;
+        a = 90 + Math.sin(t) * 35;
       }
       
       let theta = (a * Math.PI) / 180;
