@@ -111,7 +111,7 @@ const Hero = () => {
             <p className="hero-subtitle">
               I partner with ambitious teams to build digital products that look incredible, solve complex problems, and deliver absolute perfection.
             </p>
-            <a href="#contact" className="btn-pill">
+            <a href="#contact" className="btn-grad">
               CONTACT ME <ArrowRight size={16} strokeWidth={2.5} style={{ marginLeft: '8px' }} />
             </a>
           </div>

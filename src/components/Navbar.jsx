@@ -17,7 +17,7 @@ const Navbar = () => {
           <li><a href="#testimonials" style={{ color: 'var(--text-light)' }}>Testimonials</a></li>
         </ul>
         
-        <a href="#contact" className="btn-pill">
+        <a href="#contact" className="btn-grad">
           CONTACT ME <ArrowRight size={14} style={{ marginLeft: '6px' }} />
         </a>
       </div>
