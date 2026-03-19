@@ -17,8 +17,16 @@ const Navbar = () => {
           <li><a href="#testimonials" style={{ color: 'var(--text-light)' }}>Testimonials</a></li>
         </ul>
         
-        <a href="#contact" className="btn-grad">
-          CONTACT ME <ArrowRight size={14} style={{ marginLeft: '6px' }} />
+        <a href="#contact" className="btn-magic-wrap">
+          <span className="btn-magic-glow"></span>
+          <span className="btn-magic-content">
+            <div className="btn-magic-inner">
+              <span className="btn-magic-text">Contact me</span>
+              <svg className="btn-magic-icon" data-slot="icon" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path clipRule="evenodd" d="M8.22 5.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 0 1 0-1.06Z" fillRule="evenodd" />
+              </svg>
+            </div>
+          </span>
         </a>
       </div>
     </nav>

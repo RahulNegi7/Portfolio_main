@@ -83,6 +83,156 @@
   text-decoration: none;
 }
 
+/* Tailwind Converted Magic Button */
+.btn-magic-wrap {
+  position: relative;
+  display: inline-block;
+  padding: 2px;
+  font-weight: 600;
+  color: white;
+  background-color: #1f2937;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+  border: none;
+  outline: none;
+  text-decoration: none;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn-magic-wrap:hover {
+  transform: scale(1.05);
+}
+
+.btn-magic-wrap:active {
+  transform: scale(0.95);
+}
+
+.btn-magic-glow {
+  position: absolute;
+  inset: 0;
+  border-radius: 0.75rem;
+  background: linear-gradient(to right, #2dd4bf, #3b82f6, #a855f7);
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.btn-magic-wrap:hover .btn-magic-glow {
+  opacity: 1;
+}
+
+.btn-magic-content {
+  position: relative;
+  z-index: 10;
+  display: block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  background-color: #030712;
+}
+
+.btn-magic-inner {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-magic-text,
+.btn-magic-icon {
+  transition: transform 0.5s;
+}
+
+.btn-magic-wrap:hover .btn-magic-text,
+.btn-magic-wrap:hover .btn-magic-icon {
+  transform: translateX(4px);
+}
+
+.btn-magic-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+/* Custom Hero Glow Button */
+.btn-hero-glow {
+  position: relative;
+  background-color: #262626; /* neutral-800 */
+  height: 4rem; 
+  width: 16rem; 
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: left;
+  padding: 0.75rem 1.5rem; 
+  color: #f9fafb;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transform-origin: left;
+  transition-duration: 500ms;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+}
+
+.btn-hero-glow:hover {
+  border-color: #43cea2; 
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 2px;
+  color: #43cea2;
+}
+
+.btn-hero-glow::before {
+  content: '';
+  position: absolute;
+  width: 3rem;
+  height: 3rem;
+  right: 0.25rem;
+  top: 0.25rem;
+  z-index: 0;
+  background-color: #185a9d; /* deep ocean blue */
+  border-radius: 50%;
+  filter: blur(16px);
+  transition-duration: 500ms;
+}
+
+.btn-hero-glow:hover::before {
+  right: 3rem;
+  bottom: -2rem;
+  top: auto;
+  filter: blur(24px);
+  box-shadow: 20px 20px 20px 30px #185a9d;
+}
+
+.btn-hero-glow::after {
+  content: '';
+  position: absolute;
+  z-index: 0;
+  width: 5rem;
+  height: 5rem;
+  background-color: #43cea2; /* ocean green */
+  right: 2rem;
+  top: 0.75rem;
+  border-radius: 50%;
+  filter: blur(16px);
+  transition-duration: 500ms;
+}
+
+.btn-hero-glow:hover::after {
+  right: -2rem;
+}
+
+.btn-hero-glow span {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+}
+
 /* Scroll Down Button */
 .btn-scroll-down {
   position: absolute;
