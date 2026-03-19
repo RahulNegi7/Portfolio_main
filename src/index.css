@@ -936,15 +936,20 @@ a {
   width: 100%;
   height: 100px;
   z-index: 1000;
-  transition: background 0.3s ease, box-shadow 0.3s ease;
-  background: transparent;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  background: rgba(10, 15, 25, 0.3); /* Base Glassmorphism */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .navbar.scrolled {
-  background: rgba(5, 5, 5, 0.95);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(10, 12, 16, 0.75); /* Darker true glass */
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  height: 80px; /* Slims down on scroll */
 }
 
 .nav-container {
@@ -952,7 +957,7 @@ a {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  height: 100px;
+  height: 100%;
   padding: 0 5rem 0 2.5rem; 
   max-width: 1400px;
   margin: 0 auto;
@@ -1153,4 +1158,8 @@ a {
 
 @media (max-width: 900px) {
   .nav-container { padding: 0 4.5rem 0 1.5rem !important; }
+  .navbar { height: 75px; } 
+  .navbar.scrolled { height: 75px; } 
+  .nav-logo { transform: scale(0.85); transform-origin: left center; }
+  .mobile-menu-btn { top: 1.15rem; right: 1.25rem; } 
 }
