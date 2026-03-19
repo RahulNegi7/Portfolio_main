@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
+
 /* Modern Gradient Button Style */
 .button-62 {
   background: linear-gradient(to bottom right, var(--accent-purple), #2D3A8C);
@@ -27,12 +30,16 @@
 .button-62:not([disabled]):focus {
   box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem var(--accent-purple), .125rem .125rem 1rem #2D3A8C;
 }
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+.bree-serif-regular {
+  font-family: "Bree Serif", serif;
+  font-weight: 400;
+  font-style: normal;
+}
 
 :root {
   /* Core Colors */
-  --bg-light: #111111;
-  --bg-white: #0a0a0a;
+  --bg-light: #000000;
+  --bg-white: #000000;
   --bg-dark: #000000;
   --bg-darker: #000000;
   
@@ -48,11 +55,58 @@
   --nav-height: 80px;
 }
 
+/* Pill Button */
+.btn-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #FFFFFF;
+  color: #000000 !important;
+  border-radius: 50px;
+  padding: 0.8rem 1.8rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.btn-pill:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+/* Scroll Down Button */
+.btn-scroll-down {
+  position: absolute;
+  bottom: 2rem;
+  right: 2.5rem;
+  width: 50px;
+  height: 50px;
+  background-color: #FFFFFF;
+  color: #000000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  z-index: 50;
+}
+
+.btn-scroll-down:hover {
+  transform: translateY(5px);
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+
 
 html {
   scroll-behavior: smooth;
@@ -182,6 +236,16 @@ a {
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+.nav-links li a {
+  display: inline-block;
+  transition: transform 0.3s ease, color 0.3s ease !important;
+}
+
+.nav-links li a:hover {
+  transform: scale(1.15);
+  color: var(--accent-purple) !important;
 }
 
 @media (max-width: 768px) {

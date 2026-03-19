@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { ArrowRight, ArrowDown } from 'lucide-react';
 
 const FractalTree = () => {
   const canvasRef = useRef(null);
@@ -162,27 +163,32 @@ const FractalTree = () => {
 
 const Hero = () => {
   return (
-    <section id="home" className="section section-dark" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center' }} data-aos="fade-up">
-      <div className="container">
-        <div style={{ display: 'grid', gridTemplateColumns: 'minmax(400px, 1fr) 1fr', gap: '3rem', alignItems: 'center' }}>
+    <section id="home" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', backgroundColor: '#000', position: 'relative', overflow: 'hidden' }} data-aos="fade-up">
+      <div className="container" style={{ position: 'relative', zIndex: 10 }}>
+        <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 1fr', gap: '2rem', alignItems: 'center' }}>
           
-          <div className="hero-text animate-fade-in" style={{ paddingRight: '2rem' }}>
-            <p style={{ color: 'var(--text-light)', fontSize: '1.2rem', marginBottom: '1rem', fontWeight: '500' }}>Hey, I am Rahul</p>
-            <h1 className="hero-title" style={{ fontSize: '4rem', lineHeight: '1.2', marginBottom: '1.5rem', color: 'var(--text-light)' }}>
-              I create <span style={{ color: 'var(--accent-purple)' }}>product design</span> <br/>and brand experience
+          <div className="hero-text animate-fade-in" style={{ paddingRight: '1rem', marginTop: '4rem' }}>
+            <h1 className="hero-title" style={{ fontSize: 'clamp(4rem, 8vw, 6.5rem)', letterSpacing: '-2.5px', lineHeight: '1.05', marginBottom: '2rem', color: '#FFF', fontWeight: '800' }}>
+              Design Great <br/> Digital Products
             </h1>
-            <p className="hero-subtitle" style={{ color: '#A0A2B3', fontSize: '1.1rem', marginBottom: '2.5rem', maxWidth: '400px', fontWeight: '400' }}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.
+            <p className="hero-subtitle" style={{ color: '#A0A2B3', fontSize: '1.15rem', marginBottom: '3rem', maxWidth: '480px', fontWeight: '400', lineHeight: '1.6' }}>
+              I partner with ambitious teams to build digital products that look incredible, solve complex problems, and deliver absolute perfection.
             </p>
-            <a href="#contact" className="button-62">Get In Touch</a>
+            <a href="#contact" className="btn-pill">
+              CONTACT ME <ArrowRight size={16} strokeWidth={2.5} style={{ marginLeft: '8px' }} />
+            </a>
           </div>
 
-          <div className="hero-visual" style={{ height: '500px', width: '100%', position: 'relative' }}>
+          <div className="hero-visual" style={{ height: '700px', width: '100%', position: 'relative', marginLeft: '2rem' }}>
             <FractalTree />
           </div>
 
         </div>
       </div>
+
+      <a href="#about" className="btn-scroll-down">
+        <ArrowDown size={20} color="#000" strokeWidth={2.5} />
+      </a>
     </section>
   );
 };
