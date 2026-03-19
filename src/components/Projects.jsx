@@ -42,7 +42,7 @@ const Projects = () => {
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
           {projects.map((project, index) => (
-            <div key={index} data-aos="fade-up" style={{ 
+            <div key={index} data-aos="zoom-in-up" style={{ 
               background: 'var(--bg-dark)', 
               borderRadius: '10px', 
               overflow: 'hidden',
