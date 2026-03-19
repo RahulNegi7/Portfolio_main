@@ -51,7 +51,7 @@ const Contact = () => {
             <label htmlFor="terms" style={{ color: 'var(--text-muted)' }}>I accept the terms</label>
           </div>
 
-          <button type="button" className="btn-primary" style={{ width: '100%', padding: '1rem', fontSize: '1.1rem' }}>Submit</button>
+          <button type="button" className="button-62" style={{ width: '100%', fontSize: '1.1rem' }}>Submit</button>
         </form>
 
       </div>

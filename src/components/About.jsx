@@ -41,7 +41,7 @@ const About = () => {
             <p style={{ color: 'var(--text-muted)', fontSize: '1.1rem', marginBottom: '2.5rem' }}>
               Sit turpis pretium eget maecenas. Vestibulum dolor mattis consectetur eget commodo vitae. Amet pellentesque sit pulvinar lorem mi a, euismod risus r.
             </p>
-            <a href="#projects" className="btn-primary">View Portfolio</a>
+            <a href="#projects" className="button-62">View Portfolio</a>
           </div>
 
         </div>

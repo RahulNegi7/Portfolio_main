@@ -14,7 +14,7 @@ const Navbar = () => {
           <li><a href="#about" style={{ color: 'var(--text-light)' }}>About me</a></li>
           <li><a href="#testimonials" style={{ color: 'var(--text-light)' }}>Testimonials</a></li>
         </ul>
-        <a href="#contact" className="btn-outline" style={{ color: 'var(--text-light)', borderColor: 'var(--text-light)' }}>Contact Me</a>
+        <a href="#contact" className="button-62">Contact Me</a>
       </div>
     </nav>
   );

@@ -174,7 +174,7 @@ const Hero = () => {
             <p className="hero-subtitle" style={{ color: '#A0A2B3', fontSize: '1.1rem', marginBottom: '2.5rem', maxWidth: '400px', fontWeight: '400' }}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.
             </p>
-            <a href="#contact" className="btn-primary">Get In Touch</a>
+            <a href="#contact" className="button-62">Get In Touch</a>
           </div>
 
           <div className="hero-visual" style={{ height: '500px', width: '100%', position: 'relative' }}>
