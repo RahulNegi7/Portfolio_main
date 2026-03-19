@@ -65,7 +65,7 @@ const FractalTree = () => {
         // Start "closed" at 55 deg (as requested), spreading up to ~115 deg when scrolled
         const baseAngle = 55 + (scrollFactor * 35);
         // Add a tiny bit of "breathing" animation on top
-        a = baseAngle + Math.sin(t) * 10;
+        a = baseAngle + Math.sin(t) * 35;
       } else {
         // Desktop: Large autonomous sine wave spreading
         a = 55 + Math.sin(t) * 35;
