@@ -62,13 +62,13 @@ const FractalTree = () => {
       if (window.innerWidth <= 900) {
         // Mobile: Spread natively based on user scrolling!
         const scrollFactor = Math.min(window.scrollY / 600, 1);
-        // Start closed at 15 deg, spread all the way to 110 deg
-        const baseAngle = 15 + (scrollFactor * 95);
+        // Start "closed" at 55 deg (as requested), spreading up to ~115 deg when scrolled
+        const baseAngle = 55 + (scrollFactor * 60);
         // Add a tiny bit of "breathing" animation on top
         a = baseAngle + Math.sin(t) * 10;
       } else {
         // Desktop: Large autonomous sine wave spreading
-        a = 90 + Math.sin(t) * 35;
+        a = 55 + Math.sin(t) * 35;
       }
       
       let theta = (a * Math.PI) / 180;
