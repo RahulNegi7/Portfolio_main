@@ -42,69 +42,6 @@ const FractalTree = () => {
         ctx.restore();
         
         ctx.save();
-        {/* Responsive styles for mobile */}
-        <style>{`
-          .hero {
-            width: 100%;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-          }
-          .hero-content {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-between;
-            width: 100%;
-            max-width: 1280px;
-            padding: 2rem;
-          }
-          .hero-text {
-            flex: 1;
-            min-width: 0;
-          }
-          .hero-visual {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-          }
-          .fractal-tree {
-            width: 100%;
-            max-width: 400px;
-            height: 300px;
-          }
-          @media (max-width: 768px) {
-            .hero-content {
-              flex-direction: column;
-              padding: 1rem;
-            }
-            .hero-text {
-              width: 100%;
-              margin-bottom: 2rem;
-              text-align: center;
-            }
-            .hero-visual {
-              width: 100%;
-              justify-content: center;
-            }
-            .fractal-tree {
-              max-width: 100%;
-              height: 200px;
-            }
-            .hero-title {
-              font-size: 2rem;
-            }
-            .hero-description {
-              font-size: 1rem;
-            }
-            .hero-buttons {
-              flex-direction: column;
-              gap: 1rem;
-            }
-          }
-        `}</style>
         ctx.rotate(-theta);
         
         ctx.beginPath();
@@ -165,13 +102,13 @@ const Hero = () => {
   return (
     <section id="home" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', backgroundColor: '#000', position: 'relative', overflow: 'hidden' }} data-aos="fade-up">
       <div className="container" style={{ position: 'relative', zIndex: 10 }}>
-        <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 1fr', gap: '2rem', alignItems: 'center' }}>
+        <div className="hero-grid-layout">
           
-          <div className="hero-text animate-fade-in" style={{ paddingRight: '1rem', marginTop: '4rem' }}>
-            <h1 className="hero-title" style={{ fontSize: 'clamp(4rem, 8vw, 6.5rem)', letterSpacing: '-2.5px', lineHeight: '1.05', marginBottom: '2rem', color: '#FFF', fontWeight: '800' }}>
+          <div className="hero-text animate-fade-in">
+            <h1 className="hero-title">
               Design Great <br/> Digital Products
             </h1>
-            <p className="hero-subtitle" style={{ color: '#A0A2B3', fontSize: '1.15rem', marginBottom: '3rem', maxWidth: '480px', fontWeight: '400', lineHeight: '1.6' }}>
+            <p className="hero-subtitle">
               I partner with ambitious teams to build digital products that look incredible, solve complex problems, and deliver absolute perfection.
             </p>
             <a href="#contact" className="btn-pill">
@@ -179,7 +116,7 @@ const Hero = () => {
             </a>
           </div>
 
-          <div className="hero-visual" style={{ height: '700px', width: '100%', position: 'relative', marginLeft: '2rem' }}>
+          <div className="hero-visual">
             <FractalTree />
           </div>
 
