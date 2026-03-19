@@ -123,9 +123,7 @@ const Hero = () => {
         </div>
       </div>
 
-      <a href="#about" className="btn-scroll-down">
-        <ArrowDown size={20} color="#000" strokeWidth={2.5} />
-      </a>
+
     </section>
   );
 };
