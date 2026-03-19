@@ -305,12 +305,37 @@ a {
   gap: 1.5rem;
 }
 
+.about-grid {
+  display: grid;
+  grid-template-columns: minmax(300px, 1fr) 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.about-image-wrapper {
+  position: relative;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 @media (max-width: 900px) {
   .container {
     padding: 0 1.2rem;
   }
   .contact-grid {
     grid-template-columns: 1fr;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .about-image-wrapper {
+    height: 350px;
   }
   
   .section-title {

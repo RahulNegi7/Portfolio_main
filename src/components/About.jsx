@@ -4,9 +4,9 @@ const About = () => {
   return (
     <section id="about" className="section section-dark">
       <div className="container">
-        <div style={{ display: 'grid', gridTemplateColumns: 'minmax(300px, 1fr) 1fr', gap: '4rem', alignItems: 'center' }}>
+        <div className="about-grid">
           
-          <div style={{ position: 'relative', height: '500px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <div className="about-image-wrapper">
             <div style={{ 
               position: 'absolute', 
               width: '85%', 
