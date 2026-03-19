@@ -63,7 +63,7 @@ const FractalTree = () => {
         // Mobile: Spread natively based on user scrolling!
         const scrollFactor = Math.min(window.scrollY / 600, 1);
         // Start "closed" at 55 deg (as requested), spreading up to ~115 deg when scrolled
-        const baseAngle = 55 + (scrollFactor * 60);
+        const baseAngle = 55 + (scrollFactor * 35);
         // Add a tiny bit of "breathing" animation on top
         a = baseAngle + Math.sin(t) * 10;
       } else {
