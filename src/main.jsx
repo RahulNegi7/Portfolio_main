@@ -1,3 +1,10 @@
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+// Initialize AOS
+AOS.init({
+  duration: 800,
+  once: false,
+});
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
