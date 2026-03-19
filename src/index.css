@@ -534,7 +534,63 @@ a {
   width: 14px;
   height: 14px;
   margin-left: 4px;
-  color: #43cea2; /* Checkmark Ocean green */
+  color: #43cea2; 
+}
+
+/* Uiverse Custom Inputs */
+.input-group {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+
+.custom-input {
+  font-family: inherit;
+  width: 100%;
+  height: 50px;
+  padding-left: 2.8rem;
+  padding-right: 1rem;
+  box-shadow: 0 0 0 1.5px rgba(255,255,255,0.1), 0 0 25px -17px #000;
+  border: 0;
+  border-radius: 12px;
+  background-color: #16171d;
+  color: #f9fafb;
+  transition: all 0.25s cubic-bezier(0.19, 1, 0.22, 1);
+  outline: none;
+  font-size: 1rem;
+}
+
+.custom-input::placeholder {
+  color: #8c8d9e;
+}
+
+.custom-input:hover {
+  box-shadow: 0 0 0 2px rgba(67, 206, 162, 0.4), 0px 0px 25px -10px rgba(67, 206, 162, 0.15);
+}
+
+.custom-input:focus {
+  box-shadow: 0 0 0 2px #43cea2; /* Focus with ocean green */
+}
+
+.custom-textarea {
+  min-height: 120px;
+  padding-top: 1rem;
+  resize: vertical;
+}
+
+.input-icon {
+  position: absolute;
+  left: 1rem;
+  color: #8c8d9e;
+  width: 1.2rem;
+  height: 1.2rem;
+  pointer-events: none;
+  transition: color 0.25s ease;
+}
+
+.custom-input:focus + .input-icon {
+  color: #43cea2; /* icon lights up green */
 }
 
 /* Banter Loader Navbar Logo */

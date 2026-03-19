@@ -1,4 +1,5 @@
 import React from 'react';
+import { User, Mail, Phone, MessageSquare, List } from 'lucide-react';
 
 const Contact = () => {
   return (
@@ -12,38 +13,56 @@ const Contact = () => {
           <div className="contact-grid">
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
               <label htmlFor="firstName" style={{ fontWeight: '500' }}>First name</label>
-              <input type="text" id="firstName" name="firstName" style={{ padding: '0.8rem 1rem', borderRadius: '5px', border: '1px solid rgba(255,255,255,0.2)', background: 'transparent', color: 'var(--text-light)', fontSize: '1rem' }} />
+              <div className="input-group">
+                <input type="text" id="firstName" name="firstName" className="custom-input" placeholder="Rahul" />
+                <User className="input-icon" />
+              </div>
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
               <label htmlFor="lastName" style={{ fontWeight: '500' }}>Last name</label>
-              <input type="text" id="lastName" name="lastName" style={{ padding: '0.8rem 1rem', borderRadius: '5px', border: '1px solid rgba(255,255,255,0.2)', background: 'transparent', color: 'var(--text-light)', fontSize: '1rem' }} />
+              <div className="input-group">
+                <input type="text" id="lastName" name="lastName" className="custom-input" placeholder="Negi" />
+                <User className="input-icon" />
+              </div>
             </div>
           </div>
 
           <div className="contact-grid">
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
               <label htmlFor="email" style={{ fontWeight: '500' }}>Email</label>
-              <input type="email" id="email" name="email" style={{ padding: '0.8rem 1rem', borderRadius: '5px', border: '1px solid rgba(255,255,255,0.2)', background: 'transparent', color: 'var(--text-light)', fontSize: '1rem' }} />
+              <div className="input-group">
+                <input type="email" id="email" name="email" className="custom-input" placeholder="rahul@example.com" />
+                <Mail className="input-icon" />
+              </div>
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
               <label htmlFor="phone" style={{ fontWeight: '500' }}>Phone number</label>
-              <input type="tel" id="phone" name="phone" style={{ padding: '0.8rem 1rem', borderRadius: '5px', border: '1px solid rgba(255,255,255,0.2)', background: 'transparent', color: 'var(--text-light)', fontSize: '1rem' }} />
+              <div className="input-group">
+                <input type="tel" id="phone" name="phone" className="custom-input" placeholder="+1 (555) 000-0000" />
+                <Phone className="input-icon" />
+              </div>
             </div>
           </div>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
             <label htmlFor="topic" style={{ fontWeight: '500' }}>Choose a topic</label>
-            <select id="topic" name="topic" style={{ padding: '0.8rem 1rem', borderRadius: '5px', border: '1px solid rgba(255,255,255,0.2)', background: 'var(--bg-dark)', color: 'var(--text-light)', fontSize: '1rem' }}>
-              <option value="">Select one...</option>
-              <option value="project">Project Proposal</option>
-              <option value="freelance">Freelance Work</option>
-              <option value="other">Other</option>
-            </select>
+            <div className="input-group">
+              <select id="topic" name="topic" className="custom-input" style={{ appearance: 'none' }}>
+                <option value="">Select one...</option>
+                <option value="project">Project Proposal</option>
+                <option value="freelance">Freelance Work</option>
+                <option value="other">Other</option>
+              </select>
+              <List className="input-icon" />
+            </div>
           </div>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
             <label htmlFor="message" style={{ fontWeight: '500' }}>Message</label>
-            <textarea id="message" name="message" rows="5" placeholder="Type your message..." style={{ padding: '0.8rem 1rem', borderRadius: '5px', border: '1px solid rgba(255,255,255,0.2)', background: 'transparent', color: 'var(--text-light)', fontSize: '1rem', resize: 'vertical' }}></textarea>
+            <div className="input-group" style={{ alignItems: 'flex-start' }}>
+              <textarea id="message" name="message" className="custom-input custom-textarea" placeholder="Type your message..."></textarea>
+              <MessageSquare className="input-icon" style={{ top: '1rem' }} />
+            </div>
           </div>
 
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1rem' }}>
