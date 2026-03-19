@@ -33,28 +33,20 @@ const Testimonials = () => {
         
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
           {testimonials.map((testimonial, index) => (
-            <div key={index} style={{ 
-              background: 'var(--bg-darker)', 
-              padding: '2.5rem 2rem', 
-              borderRadius: '10px',
-              border: '1px solid rgba(255,255,255,0.05)'
-            }}>
-              <div style={{ display: 'flex', gap: '0.2rem', marginBottom: '1.5rem', color: '#00B67A' }}>
-                {/* 5 Stars using SVG */}
-                {[...Array(testimonial.rating)].map((_, i) => (
-                  <svg key={i} width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
-                  </svg>
-                ))}
-              </div>
-              <p style={{ fontSize: '1.1rem', marginBottom: '2rem', color: 'rgba(255,255,255,0.8)' }}>
-                "{testimonial.text}"
-              </p>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                <img src={testimonial.avatar} alt={testimonial.name} style={{ width: '60px', height: '60px', borderRadius: '50%', objectFit: 'cover' }} />
-                <div>
-                  <h4 style={{ margin: 0, fontSize: '1.1rem' }}>{testimonial.name}</h4>
-                  <p style={{ margin: 0, fontSize: '0.9rem', color: 'rgba(255,255,255,0.6)' }}>{testimonial.company}</p>
+            <div key={index} className="testim-card" data-aos="fade-up" data-aos-delay={index * 100}>
+              <div className="testim-card-name">Client Review</div>
+              <div className="testim-body-text">"{testimonial.text}"</div>
+              
+              <div className="testim-author-container">
+                <img src={testimonial.avatar} alt={testimonial.name} className="testim-pic" />
+                <div className="testim-author-wrap">
+                  <div className="testim-author-name">{testimonial.name}</div>
+                  <div className="testim-author-company">
+                    {testimonial.company}
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                    </svg>
+                  </div>
                 </div>
               </div>
             </div>
