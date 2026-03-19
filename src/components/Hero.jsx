@@ -58,11 +58,20 @@ const FractalTree = () => {
     const animate = () => {
       ctx.clearRect(0, 0, width, height);
       
-      // Animate angle automatically based on sine wave as requested
-      // Map sin(t) from [-1, 1] to [20, 90] degrees (Center=55, Amp=35)
-      let a = 55 + Math.sin(t) * 35;  
-      let theta = (a * Math.PI) / 180;
+      let a;
+      if (window.innerWidth <= 900) {
+        // Mobile: Spread natively based on user scrolling!
+        const scrollFactor = Math.min(window.scrollY / 600, 1);
+        // Start closed at 15 deg, spread all the way to 110 deg
+        const baseAngle = 15 + (scrollFactor * 95);
+        // Add a tiny bit of "breathing" animation on top
+        a = baseAngle + Math.sin(t) * 10;
+      } else {
+        // Desktop: Large autonomous sine wave spreading
+        a = 55 + Math.sin(t) * 35;
+      }
       
+      let theta = (a * Math.PI) / 180;
       t += 0.005; // Increase time for medium speed
       
       ctx.strokeStyle = 'rgb(255, 255, 255)'; // White tree lines as per Figma
