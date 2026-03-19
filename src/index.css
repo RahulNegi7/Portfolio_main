@@ -1152,5 +1152,5 @@ a {
 }
 
 @media (max-width: 900px) {
-  .nav-container { padding: 0 1.5rem !important; }
+  .nav-container { padding: 0 4.5rem 0 1.5rem !important; }
 }
