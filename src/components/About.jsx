@@ -8,38 +8,38 @@ const About = () => {
           
           <div className="about-image-wrapper">
             <div style={{ 
-              position: 'absolute', 
-              width: '85%', 
-              height: '80%', 
-              bottom: '10%', 
-              left: '5%',
+              position: 'relative', 
+              width: '80%', 
+              height: '85%', 
               background: 'var(--accent-purple)', 
               borderRadius: '20px',
-              zIndex: 0
-            }}></div>
-            <img 
-               src="https://via.placeholder.com/400x500/1C1E53/FFFFFF?text=Profile+Image" 
-               alt="About Me" 
-               style={{ 
-                 position: 'relative', 
-                 zIndex: 1, 
-                 width: '80%', 
-                 height: '90%', 
-                 objectFit: 'cover',
-                 borderRadius: '20px',
-                 boxShadow: '0 10px 30px rgba(0,0,0,0.1)'
-               }} 
-            />
+              zIndex: 0,
+              overflow: 'hidden',
+              display: 'flex',
+              alignItems: 'flex-end',
+              justifyContent: 'center',
+              boxShadow: '0 10px 30px rgba(67, 206, 162, 0.15)'
+            }}>
+              <img 
+                 src="/rahul_profile.jpeg" 
+                 alt="Rahul Negi" 
+                 style={{ 
+                   width: '100%', 
+                   height: '100%', 
+                   objectFit: 'cover'
+                 }} 
+              />
+            </div>
           </div>
 
           <div>
             <p style={{ fontWeight: '600', marginBottom: '0.5rem' }}>About</p>
             <h2 className="section-title" style={{ marginBottom: '1.5rem' }} data-aos="fade-up">About Me</h2>
             <p style={{ color: 'var(--text-muted)', fontSize: '1.1rem', marginBottom: '1.5rem' }}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce varius faucibus massa sollicitudin amet augue. Nibh metus a semper purus mauris duis. Lorem eu neque, tristique quis duis. Nibh scelerisque ac adipiscing velit non nulla in amet pellentesque. 
+              I am a Computer Science and Engineering student with a strong academic background and a passion for building impactful technology solutions. With hands-on experience in web development and problem-solving, I continuously work on improving my skills and exploring new tools and frameworks. 
             </p>
             <p style={{ color: 'var(--text-muted)', fontSize: '1.1rem', marginBottom: '2.5rem' }}>
-              Sit turpis pretium eget maecenas. Vestibulum dolor mattis consectetur eget commodo vitae. Amet pellentesque sit pulvinar lorem mi a, euismod risus r.
+              I enjoy developing responsive applications and contributing to real-world projects, from user interfaces to full-stack systems. I am a collaborative, quick learner who is always eager to innovate and grow through practical experience and meaningful challenges.
             </p>
             <a href="#projects" className="btn-grad">View Portfolio</a>
           </div>
