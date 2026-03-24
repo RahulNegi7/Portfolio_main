@@ -1,5 +1,6 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { ArrowRight, ArrowDown } from 'lucide-react';
+import { Cursor } from 'react-simple-typewriter';
 
 const FractalTree = () => {
   const canvasRef = useRef(null);
@@ -107,6 +108,76 @@ const FractalTree = () => {
   return <canvas ref={canvasRef} style={{ width: '100%', height: '100%' }} />;
 };
 
+const CustomTypewriter = () => {
+  const phrases = [
+    { prefix: "Hey, I'm ", highlight: "Rahul", suffix: "" },
+    { prefix: "A ", highlight: "Computer Science", suffix: " student" },
+    { prefix: "Passionate about ", highlight: "building", suffix: " projects" },
+    { prefix: "Welcome to my ", highlight: "portfolio", suffix: "!" }
+  ];
+
+  const [phraseIndex, setPhraseIndex] = useState(0);
+  const [charIndex, setCharIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    const currentPhrase = phrases[phraseIndex];
+    const fullText = currentPhrase.prefix + currentPhrase.highlight + currentPhrase.suffix;
+
+    let timer;
+    if (isDeleting) {
+      if (charIndex === 0) {
+        setIsDeleting(false);
+        setPhraseIndex(p => (p + 1) % phrases.length);
+      } else {
+        timer = setTimeout(() => {
+          setCharIndex(c => c - 1);
+        }, 60);
+      }
+    } else {
+      if (charIndex === fullText.length) {
+        timer = setTimeout(() => setIsDeleting(true), 2000);
+      } else {
+        timer = setTimeout(() => {
+          setCharIndex(c => c + 1);
+        }, 120);
+      }
+    }
+
+    return () => clearTimeout(timer);
+  }, [charIndex, isDeleting, phraseIndex]);
+
+  const currentPhrase = phrases[phraseIndex];
+  
+  const pLen = currentPhrase.prefix.length;
+  const hLen = currentPhrase.highlight.length;
+
+  const typedPrefix = currentPhrase.prefix.substring(0, charIndex);
+  const untypedPrefix = currentPhrase.prefix.substring(charIndex);
+
+  const typedHighlight = currentPhrase.highlight.substring(0, Math.max(0, charIndex - pLen));
+  const untypedHighlight = currentPhrase.highlight.substring(Math.max(0, charIndex - pLen));
+
+  const typedSuffix = currentPhrase.suffix.substring(0, Math.max(0, charIndex - pLen - hLen));
+  const untypedSuffix = currentPhrase.suffix.substring(Math.max(0, charIndex - pLen - hLen));
+
+  return (
+    <>
+      <span style={{ display: 'inline' }}>
+        <span>{typedPrefix}</span>
+        {typedHighlight && <span style={{ color: '#43cea2' }}>{typedHighlight}</span>}
+        <span>{typedSuffix}</span>
+      </span>
+      <Cursor cursorStyle="|" />
+      <span style={{ visibility: 'hidden', display: 'inline' }}>
+        <span>{untypedPrefix}</span>
+        {untypedHighlight && <span style={{ color: '#43cea2' }}>{untypedHighlight}</span>}
+        <span>{untypedSuffix}</span>
+      </span>
+    </>
+  );
+};
+
 const Hero = () => {
   return (
     <section id="home" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', backgroundColor: '#000', position: 'relative', overflow: 'hidden' }} data-aos="fade-up">
@@ -114,8 +185,8 @@ const Hero = () => {
         <div className="hero-grid-layout">
           
           <div className="hero-text animate-fade-in">
-            <h1 className="hero-title">
-              Design Great <br/> Digital Products
+            <h1 className="hero-title" style={{ minHeight: '160px' }}>
+              <CustomTypewriter />
             </h1>
             <p className="hero-subtitle">
               I partner with ambitious teams to build digital products that look incredible, solve complex problems, and deliver absolute perfection.
