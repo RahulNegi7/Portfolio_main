@@ -4,21 +4,24 @@ import { ExternalLink } from 'lucide-react';
 const projects = [
   {
     title: 'Ahuse',
-    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.',
+    desc: 'A modern web application featuring intuitive design and seamless user experience. Built with clean architecture and scalable components.',
     link: '#',
-    image: 'https://images.unsplash.com/photo-1557821552-17105176677c?w=600&h=400&fit=crop'
+    image: 'https://images.unsplash.com/photo-1557821552-17105176677c?w=600&h=400&fit=crop',
+    tags: ['React', 'JavaScript', 'Tailwind CSS']
   },
   {
     title: 'App Dashboard',
-    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.',
+    desc: 'Comprehensive analytics dashboard providing real-time data visualization, metrics tracking, and responsive charts.',
     link: '#',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop'
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop',
+    tags: ['React', 'Chart.js', 'REST API']
   },
   {
     title: 'Easy Rent',
-    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.',
+    desc: 'Rental management portal enabling users to explore listings, view property details, and handle reservations efficiently.',
     link: '#',
-    image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=600&h=400&fit=crop'
+    image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=600&h=400&fit=crop',
+    tags: ['Full Stack', 'Node.js', 'Express', 'MongoDB']
   }
 ];
 
@@ -40,24 +43,36 @@ const Projects = () => {
           </button>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
+        <div className="projects-list">
           {projects.map((project, index) => (
-            <div key={index} data-aos="zoom-in-up" style={{ 
-              background: 'var(--bg-dark)', 
-              borderRadius: '10px', 
-              overflow: 'hidden',
-              border: '1px solid rgba(255,255,255,0.05)',
-              boxShadow: '0 4px 20px rgba(0,0,0,0.5)',
-              display: 'flex',
-              flexDirection: 'column'
-            }}>
-              <div style={{ backgroundImage: `url(${project.image})`, height: '250px', backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
-              <div style={{ padding: '2rem', display: 'flex', flexDirection: 'column', flex: 1 }}>
-                <h3 style={{ fontSize: '1.5rem', marginBottom: '0.8rem' }}>{project.title}</h3>
-                <p style={{ color: 'var(--text-muted)', marginBottom: '1.5rem', flex: 1 }}>{project.desc}</p>
-                <a href={project.link} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontWeight: '600', color: 'var(--text-dark)', borderBottom: '1px solid var(--accent-purple)', paddingBottom: '0.2rem', width: 'fit-content' }}>
-                  View Website <ExternalLink size={18} />
+            <div key={index} data-aos="fade-up" className="project-card">
+              {/* Left Column: Image with Visit Website link right below it */}
+              <div className="project-media-col">
+                <div className="project-image-box">
+                  <img src={project.image} alt={project.title} className="project-img" />
+                </div>
+                <a 
+                  href={project.link} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="project-link-btn"
+                >
+                  <span>Visit Website</span>
+                  <ExternalLink size={16} />
                 </a>
+              </div>
+
+              {/* Right Column: Written information */}
+              <div className="project-content-col">
+                <h3 className="project-title">{project.title}</h3>
+                <p className="project-desc">{project.desc}</p>
+                {project.tags && (
+                  <div className="project-tags">
+                    {project.tags.map((tag, tIndex) => (
+                      <span key={tIndex} className="project-tag">{tag}</span>
+                    ))}
+                  </div>
+                )}
               </div>
             </div>
           ))}

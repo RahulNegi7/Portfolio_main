@@ -1,16 +1,114 @@
-# React + Vite
+# 🚀 Rahul Negi - Personal Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive personal portfolio website showcasing projects, skills, and experience. Built with React and Vite.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠️ Tech Stack
 
-## React Compiler
+- **Framework**: [React 19](https://react.dev/)
+- **Build Tool**: [Vite](https://vite.dev/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **Animations**: [AOS (Animate On Scroll)](https://michalsnik.github.io/aos/)
+- **Typewriter Effect**: [react-simple-typewriter](https://www.npmjs.com/package/react-simple-typewriter)
+- **Styling**: Modern Vanilla CSS
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 📋 Prerequisites
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Make sure you have **Node.js** (v18+ recommended) and **npm** installed on your system.
+Verify your installation:
+
+```bash
+node -v
+npm -v
+```
+
+---
+
+## ⚡ Getting Started (Running the Frontend Locally)
+
+Follow these steps to run the portfolio locally on your machine:
+
+### 1. Open Terminal and Navigate to the Project Directory
+
+```bash
+cd /Users/rahulnegi/Desktop/Website_MINE
+```
+*(Or navigate to wherever you have cloned/saved the project folder)*
+
+### 2. Install Dependencies
+
+Install all required packages from `package.json`:
+
+```bash
+npm install
+```
+
+### 3. Start the Development Server
+
+Run the Vite local development server:
+
+```bash
+npm run dev
+```
+
+### 4. Open in Your Browser
+
+Once started, Vite will output a local URL (usually `http://localhost:5173`).
+Open your browser and navigate to:
+
+👉 **[http://localhost:5173](http://localhost:5173)**
+
+The server supports Hot Module Replacement (HMR), so any code changes you save will reflect instantly in the browser.
+
+---
+
+## 📦 Production Build & Preview
+
+### Build for Production
+
+To create an optimized production build in the `dist/` directory:
+
+```bash
+npm run build
+```
+
+### Preview Production Build
+
+To test and preview the production build locally before deploying:
+
+```bash
+npm run preview
+```
+
+---
+
+## 📜 All Available Scripts
+
+| Command | Description |
+| :--- | :--- |
+| `npm run dev` | Starts Vite local development server with HMR |
+| `npm run build` | Compiles and bundles production-ready assets to `dist/` |
+| `npm run preview` | Serves the production build locally for testing |
+| `npm run lint` | Runs ESLint to check for code issues and styling errors |
+
+---
+
+## 📁 Project Structure
+
+```text
+Website_MINE/
+├── public/              # Static assets (images, icons, etc.)
+├── src/
+│   ├── assets/          # Component assets & styles
+│   ├── components/      # React UI components (Hero, Navbar, About, Projects, etc.)
+│   ├── App.jsx          # Root application component
+│   ├── index.css        # Global CSS styling & design system
+│   └── main.jsx         # React application entry point
+├── index.html           # HTML template
+├── package.json         # Project metadata and dependencies
+└── vite.config.js       # Vite configuration
+```
+
