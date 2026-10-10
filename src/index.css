@@ -1,6 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
-
 /* Modern Gradient Button Style */
 .button-62 {
   background: linear-gradient(to bottom right, var(--accent-purple), #2D3A8C);
@@ -9,7 +6,7 @@
   color: #FFFFFF;
   cursor: pointer;
   display: inline-block;
-  font-family: 'Inter', -apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "SF Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 16px;
   font-weight: 500;
   line-height: 2.5;
@@ -248,12 +245,25 @@ html {
   overflow-x: hidden;
 }
 
+body,
+button,
+input,
+select,
+textarea,
+h1, h2, h3, h4, h5, h6,
+p, span, a {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "SF Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "SF Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
   background-color: var(--bg-white);
   color: var(--text-dark);
   overflow-x: hidden;
   line-height: 1.6;
+  text-rendering: optimizeLegibility;
 }
 
 /* Navbar overrides */
