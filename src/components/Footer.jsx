@@ -6,9 +6,10 @@ const Footer = () => {
     <footer style={{ background: 'var(--bg-light)', padding: '2.5rem 0', color: 'var(--text-light)' }} data-aos="fade-up">
       <div className="container">
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '2.5rem', minHeight: '60px' }}>
-          <a href="https://www.instagram.com/_rahul__.negi/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-light)' }}><InstagramIcon /></a>
-          <a href="https://x.com/RahulNe8" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-light)' }}><XIcon /></a>
-          <a href="https://www.linkedin.com/in/rahul-negi-961b88275/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-light)' }}><Linkedin size={24} /></a>
+          <a href="https://github.com/RahulNegi7" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-light)', transition: 'color 0.2s' }}><Github size={24} /></a>
+          <a href="https://www.linkedin.com/in/rahul-negi-961b88275/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-light)', transition: 'color 0.2s' }}><Linkedin size={24} /></a>
+          <a href="https://x.com/RahulNe8" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-light)', transition: 'color 0.2s' }}><XIcon /></a>
+          <a href="https://www.instagram.com/_rahul__.negi/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-light)', transition: 'color 0.2s' }}><InstagramIcon /></a>
         </div>
       </div>
     </footer>

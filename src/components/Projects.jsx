@@ -1,27 +1,41 @@
 import React from 'react';
-import { ExternalLink } from 'lucide-react';
+import { ExternalLink, Github } from 'lucide-react';
 
 const projects = [
   {
-    title: 'Ahuse',
-    desc: 'A modern web application featuring intuitive design and seamless user experience. Built with clean architecture and scalable components.',
-    link: '#',
-    image: 'https://images.unsplash.com/photo-1557821552-17105176677c?w=600&h=400&fit=crop',
-    tags: ['React', 'JavaScript', 'Tailwind CSS']
+    title: 'Secure Task Management REST API',
+    period: 'July 2026 – Aug 2026',
+    bullets: [
+      'Developed a secure RESTful task management backend with JWT-based stateless authentication, BCrypt password hashing, and role-based access control.',
+      'Implemented user-level task isolation, input validation, centralized exception handling, and a layered Controller–Service–Repository architecture using Spring Data JPA.',
+      'Containerized MySQL using Docker Compose and developed REST endpoints for authentication and task CRUD operations.'
+    ],
+    link: 'https://github.com/RahulNegi7',
+    image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&auto=format&fit=crop&q=80',
+    tags: ['Java', 'Spring Boot', 'REST API', 'JWT', 'MySQL', 'Docker', 'Spring Data JPA']
   },
   {
-    title: 'App Dashboard',
-    desc: 'Comprehensive analytics dashboard providing real-time data visualization, metrics tracking, and responsive charts.',
-    link: '#',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop',
-    tags: ['React', 'Chart.js', 'REST API']
+    title: 'Intelligent Gaze-Controlled Cursor Navigation',
+    period: 'Jan 2026 – March 2026',
+    bullets: [
+      'Developed a real-time computer vision–based HCI system enabling hands-free cursor control using webcam input, leveraging facial landmark detection and iris tracking to accurately map gaze direction to screen coordinates.',
+      'Implemented Eye Aspect Ratio (EAR)-based blink detection with smoothing and performance optimization techniques, achieving ~35 ms latency, up to 92 FPS, and 96.7% accuracy for reliable real-time interaction.'
+    ],
+    link: 'https://github.com/RahulNegi7',
+    image: 'https://images.unsplash.com/photo-1507146153580-69a1fe6d8aa1?w=800&auto=format&fit=crop&q=80',
+    tags: ['Python', 'OpenCV', 'MediaPipe', 'PyAutoGUI', 'Computer Vision', 'HCI']
   },
   {
-    title: 'Easy Rent',
-    desc: 'Rental management portal enabling users to explore listings, view property details, and handle reservations efficiently.',
-    link: '#',
-    image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=600&h=400&fit=crop',
-    tags: ['Full Stack', 'Node.js', 'Express', 'MongoDB']
+    title: 'Crowd-Stacks — Decentralized Crowdfunding dApp',
+    period: 'Aug 2025 – Sept 2025',
+    bullets: [
+      'Developed a full stack decentralized crowdfunding application integrating Next.js frontend with Clarity smart contracts on the Stacks blockchain.',
+      'Implemented on-chain logic for campaign creation, funding, goal validation, withdrawals, and refunds, ensuring transparent & trustless transactions.',
+      'Designed an intuitive UI for creating and contributing to crowdfunding campaigns with seamless blockchain interactions.'
+    ],
+    link: 'https://github.com/RahulNegi7',
+    image: 'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=800&auto=format&fit=crop&q=80',
+    tags: ['Next.js', 'React', 'TypeScript', 'Node.js', 'Clarity', 'Stacks Blockchain', 'Web3']
   }
 ];
 
@@ -29,24 +43,27 @@ const Projects = () => {
   return (
     <section id="projects" className="section section-dark">
       <div className="container">
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '3rem' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '3rem', flexWrap: 'wrap', gap: '1rem' }}>
           <div data-aos="fade-up">
-            <p style={{ fontWeight: '600', marginBottom: '0.5rem' }}>Recent Projects</p>
-            <h2 className="section-title" style={{ margin: 0 }}>My Portfolio</h2>
+            <p style={{ fontWeight: '600', marginBottom: '0.5rem', color: '#43cea2' }}>Featured Work</p>
+            <h2 className="section-title" style={{ margin: 0 }}>My Projects</h2>
           </div>
-          <button className="btn-grad">
-            {/* The figma UI has a Dribbble button in pink color. Using Dribbble pink color here */}
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style={{ marginRight: '8px' }}>
-              <path d="M12 24C5.385 24 0 18.615 0 12S5.385 0 12 0s12 5.385 12 12-5.385 12-12 12zm8.66-15.06c-1.428-2.67-3.69-4.81-6.19-5.96-.28 1.09-1.09 3.01-1.77 4.67 3.32 1.02 5.95 2.5 7.96 1.29zm-13.6 7.42c1.77-.38 4.31-.69 7.02-.69 1.54 0 3.02.16 4.38.45-1.14 3.73-2.92 6.54-3.15 6.89C10.74 22.42 7.04 20.3 5.06 16.36zm-2.02-3.8c0 1.95.53 3.78 1.45 5.35 1.57-2.73 4.2-4.57 6.9-5.33-1.07-2.61-2.31-5.18-2.58-5.74-3.15 1.25-5.33 4.09-5.77 5.72zm11.23 2.15c-1.35-.29-2.8-.45-4.33-.45-2.54 0-4.9.29-6.52.64v.53c0 .26.02.5.03.75 3.12-.13 6.42-.56 8.92-2.12-.1-.58-.58-1.57-1.1-2.45-3.32-1.2-6.27-2.84-8.08-4.26-.06.27-.12.55-.17.84.28.53 1.55 3 2.62 5.56-2.51.78-4.94 2.53-6.4 5.06C3.99 18.23 6.9 20.9 9.85 21l.15-4.5h-.02zm1.68-7.85c.67-1.63 1.46-3.5 1.72-4.57C14.07 1 11.27 1.83 9.4 3.49c.28.59 1.54 3.2 2.65 5.86 1.86-1.5 5.06-3.23 8.64-4.52z"/>
-            </svg>
-            Visit My Dribbble
-          </button>
+          <a 
+            href="https://github.com/RahulNegi7" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="btn-grad"
+            style={{ display: 'inline-flex', alignItems: 'center', textDecoration: 'none' }}
+          >
+            <Github size={18} style={{ marginRight: '8px' }} />
+            Visit My GitHub
+          </a>
         </div>
 
         <div className="projects-list">
           {projects.map((project, index) => (
             <div key={index} data-aos="fade-up" className="project-card">
-              {/* Left Column: Image with Visit Website link right below it */}
+              {/* Left Column: Image with Visit Website / GitHub link right below it */}
               <div className="project-media-col">
                 <div className="project-image-box">
                   <img src={project.image} alt={project.title} className="project-img" />
@@ -57,22 +74,29 @@ const Projects = () => {
                   rel="noopener noreferrer" 
                   className="project-link-btn"
                 >
-                  <span>Visit Website</span>
+                  <span>View Project</span>
                   <ExternalLink size={16} />
                 </a>
               </div>
 
-              {/* Right Column: Written information */}
+              {/* Right Column: Written details from resume */}
               <div className="project-content-col">
-                <h3 className="project-title">{project.title}</h3>
-                <p className="project-desc">{project.desc}</p>
-                {project.tags && (
-                  <div className="project-tags">
-                    {project.tags.map((tag, tIndex) => (
-                      <span key={tIndex} className="project-tag">{tag}</span>
-                    ))}
-                  </div>
-                )}
+                <div className="project-header">
+                  <h3 className="project-title">{project.title}</h3>
+                  <span className="project-period">{project.period}</span>
+                </div>
+                
+                <ul className="project-bullets">
+                  {project.bullets.map((bullet, bIndex) => (
+                    <li key={bIndex} className="project-bullet">{bullet}</li>
+                  ))}
+                </ul>
+
+                <div className="project-tags">
+                  {project.tags.map((tag, tIndex) => (
+                    <span key={tIndex} className="project-tag">{tag}</span>
+                  ))}
+                </div>
               </div>
             </div>
           ))}
