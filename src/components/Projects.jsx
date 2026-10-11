@@ -45,7 +45,7 @@ const Projects = () => {
       <div className="container">
         <div className="projects-heading">
           <div data-aos="fade-up">
-            <p className="eyebrow">Selected work / 04</p>
+            <p className="eyebrow">Selected work</p>
             <h2 className="section-title">Projects with<br /><em>purpose.</em></h2>
           </div>
           <a 
@@ -65,7 +65,7 @@ const Projects = () => {
               {/* Left Column: Image with Visit Website / GitHub link right below it */}
               <div className="project-media-col">
                 <div className="project-image-box">
-                  <img src={project.image} alt={project.title} className="project-img" />
+                  <img src={project.image} alt={project.title} className="project-img" draggable="false" />
                 </div>
                 <a 
                   href={project.link} 
