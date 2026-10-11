@@ -73,8 +73,8 @@ const Projects = () => {
                   rel="noopener noreferrer" 
                   className="project-link-btn"
                 >
-                  <span>View Project</span>
-                  <ExternalLink size={16} />
+                  <span>Explore project</span>
+                  <span className="project-link-icon"><ExternalLink size={15} /></span>
                 </a>
               </div>
 

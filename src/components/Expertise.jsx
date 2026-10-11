@@ -13,50 +13,64 @@ const FractalTree = () => {
     let width = 0;
     let height = 0;
     let time = 0;
-    const pixelRatio = Math.min(window.devicePixelRatio || 1, 2);
-    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     const resize = () => {
-      const bounds = canvas.getBoundingClientRect();
-      width = bounds.width;
-      height = bounds.height;
-      canvas.width = Math.round(width * pixelRatio);
-      canvas.height = Math.round(height * pixelRatio);
-      context.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
+      width = canvas.parentElement.clientWidth;
+      height = canvas.parentElement.clientHeight;
+      canvas.width = width;
+      canvas.height = height;
     };
 
-    const branch = (x, y, length, angle, spread, depth) => {
-      if (length < 4 || depth > 10) return;
-      const endX = x + Math.sin(angle) * length;
-      const endY = y - Math.cos(angle) * length;
-      context.lineWidth = Math.max(0.65, depth * 0.19);
-      context.beginPath();
-      context.moveTo(x, y);
-      context.lineTo(endX, endY);
-      context.stroke();
-      branch(endX, endY, length * 0.68, angle - spread, spread, depth + 1);
-      branch(endX, endY, length * 0.68, angle + spread, spread, depth + 1);
+    const drawBranch = (length, angle) => {
+      length *= 0.66;
+      if (length > 2) {
+        context.save();
+        context.rotate(angle);
+        context.beginPath();
+        context.moveTo(0, 0);
+        context.lineTo(0, -length);
+        context.stroke();
+        context.translate(0, -length);
+        drawBranch(length, angle);
+        context.restore();
+
+        context.save();
+        context.rotate(-angle);
+        context.beginPath();
+        context.moveTo(0, 0);
+        context.lineTo(0, -length);
+        context.stroke();
+        context.translate(0, -length);
+        drawBranch(length, angle);
+        context.restore();
+      }
     };
 
     const draw = () => {
       context.clearRect(0, 0, width, height);
-      context.strokeStyle = 'rgba(35, 36, 31, 0.72)';
-      context.lineCap = 'round';
-      const sway = reduceMotion ? 0 : Math.sin(time) * 0.13;
-      const spread = 0.43 + (window.scrollY / Math.max(document.documentElement.scrollHeight - window.innerHeight, 1)) * 0.15;
-      const trunkLength = Math.min(height * 0.38, 122);
-      const rootX = width * 0.53;
-      const rootY = height - 12;
-      context.lineWidth = 2;
-      context.beginPath();
-      context.moveTo(rootX, rootY);
-      context.lineTo(rootX, rootY - trunkLength);
-      context.stroke();
-      branch(rootX, rootY - trunkLength, trunkLength * 0.78, sway, spread, 1);
-      if (!reduceMotion) {
-        time += 0.012;
-        frameId = window.requestAnimationFrame(draw);
+      let angleDegrees;
+      if (window.innerWidth <= 900) {
+        const scrollFactor = Math.min(window.scrollY / 600, 1);
+        angleDegrees = 55 + scrollFactor * 35 + Math.sin(time) * 35;
+      } else {
+        angleDegrees = 55 + Math.sin(time) * 35;
       }
+      const angle = angleDegrees * Math.PI / 180;
+      time += 0.005;
+      context.strokeStyle = '#282823';
+      context.lineWidth = 1.5;
+      context.lineCap = 'round';
+      context.save();
+      context.translate(width / 2, height - 12);
+      const trunkLength = Math.min(150, height / 3.5);
+      context.beginPath();
+      context.moveTo(0, 0);
+      context.lineTo(0, -trunkLength);
+      context.stroke();
+      context.translate(0, -trunkLength);
+      drawBranch(trunkLength, angle);
+      context.restore();
+      frameId = window.requestAnimationFrame(draw);
     };
 
     resize();
@@ -81,7 +95,7 @@ const items = [
 const Expertise = () => (
   <section id="expertise" className="section expertise-section">
     <div className="container">
-      <div className="section-heading"><p className="eyebrow">What I work on / 02</p><h2 className="section-title">Curiosity, made<br /><em>practical.</em></h2><div className="expertise-heading-side"><p className="section-intro">I like turning interesting problems into clear, useful experiences.</p><div className="expertise-art"><FractalTree /><span>GROWTH THROUGH<br />EXPERIMENTATION</span></div></div></div>
+      <div className="section-heading"><p className="eyebrow">What I work on</p><h2 className="section-title">Curiosity, made<br /><em>practical.</em></h2><div className="expertise-heading-side"><p className="section-intro">I like turning interesting problems into clear, useful experiences.</p><div className="expertise-art"><FractalTree /></div></div></div>
       <div className="expertise-grid">{items.map((item) => <article className="expertise-card" key={item.number}><div className="expertise-card-top"><span>{item.number}</span>{item.icon}</div><h3>{item.title}</h3><p>{item.text}</p></article>)}</div>
     </div>
   </section>

@@ -1937,11 +1937,10 @@ body.menu-open { overflow: hidden; }
 }
 
 /* Fractal artwork beside the expertise heading */
-.expertise-heading-side { min-height: 280px; position: relative; display: flex; flex-direction: column; align-items: flex-end; justify-content: space-between; }
+.expertise-heading-side { min-height: 430px; position: relative; display: flex; flex-direction: column; align-items: flex-end; justify-content: space-between; }
 .expertise-heading-side .section-intro { max-width: 310px; margin: .3rem 0 0; }
-.expertise-art { position: relative; width: min(100%, 340px); height: 225px; margin-top: -1rem; }
+.expertise-art { position: relative; width: min(100%, 390px); height: 390px; margin-top: -1rem; }
 .expertise-tree-canvas { display: block; width: 100%; height: 100%; }
-.expertise-art > span { position: absolute; right: 0; bottom: 1rem; color: #787870; font-size: .55rem; line-height: 1.55; letter-spacing: .16em; text-align: right; }
 
 /* Keep project typography on the same editorial scale as the other sections */
 #projects.section { background: var(--paper); color: var(--ink); }
@@ -1956,9 +1955,13 @@ body.menu-open { overflow: hidden; }
 .project-bullet { color: #62625b; font-size: .86rem; }
 .project-tag { color: #55554e; font-size: .68rem; letter-spacing: .015em; }
 .project-card { display: grid; grid-template-columns: minmax(220px,.78fr) 1.22fr; align-items: stretch; gap: clamp(1.5rem,4vw,4rem); padding: clamp(1.2rem,3vw,2.4rem) 0; border: 0; border-bottom: 1px solid rgba(23,23,21,.2); border-radius: 0; background: transparent; backdrop-filter: none; box-shadow: none; }
-.project-media-col { width: 100%; min-width: 0; }
-.project-image-box { height: 245px; border: 0; border-radius: 0; background: #c7c5bc; }
-.project-link-btn { width: 100%; justify-content: space-between; border: 0; border-bottom: 1px solid rgba(23,23,21,.25); border-radius: 0; background: transparent; color: var(--ink); padding: .8rem 0; }
+.project-media-col { width: 100%; min-width: 0; overflow: hidden; border-radius: 18px; background: #efeee9; box-shadow: 0 12px 28px rgba(26,25,22,.12), 0 2px 6px rgba(26,25,22,.08); transition: transform .3s ease, box-shadow .3s ease; }
+.project-media-col:hover { transform: translateY(-4px); box-shadow: 0 18px 36px rgba(26,25,22,.18), 0 3px 8px rgba(26,25,22,.1); }
+.project-image-box { height: 270px; overflow: hidden; border: 0; border-radius: 18px 18px 0 0; background: #c7c5bc; }
+.project-link-btn { width: 100%; min-height: 62px; justify-content: space-between; border: 0; border-radius: 0; background: #efeee9; color: var(--ink); padding: .75rem 1.2rem; font-size: .76rem; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; }
+.project-link-btn:hover { background: #e7e6df; color: var(--ink); }
+.project-link-icon { width: 34px; height: 34px; display: grid; place-items: center; border: 1px solid rgba(23,23,21,.28); border-radius: 50%; transition: color .25s ease, background .25s ease, transform .25s ease; }
+.project-link-btn:hover .project-link-icon { color: var(--paper); background: var(--ink); transform: rotate(45deg); }
 .project-content-col { padding: .4rem 0; }
 .project-header { align-items: start; margin-bottom: 1.5rem; }
 .project-bullets { gap: .75rem; }
@@ -1968,9 +1971,9 @@ body.menu-open { overflow: hidden; }
   .project-image-box { height: 250px; }
 }
 @media (max-width: 620px) {
-  .expertise-heading-side { min-height: 250px; align-items: flex-start; margin-top: 2rem; }
+  .expertise-heading-side { min-height: 0; align-items: flex-start; margin-top: 2rem; }
   .expertise-heading-side .section-intro { align-self: flex-start; }
-  .expertise-art { align-self: flex-end; width: 85%; margin-top: -1rem; }
+  .expertise-art { align-self: flex-end; width: 85%; height: 330px; margin-top: .5rem; }
   .projects-heading { align-items: flex-start; flex-direction: column; }
   .projects-heading .section-title { font-size: clamp(2.7rem,12vw,4.4rem); }
   .project-image-box { height: 220px; }
@@ -1982,3 +1985,11 @@ body.menu-open { overflow: hidden; }
 .navbar.menu-is-open .nav-logo,
 .navbar.menu-is-open .nav-availability { visibility: hidden; }
 .navbar.menu-is-open .menu-toggle { color: var(--ink); }
+
+/* Inset each project media card within its outer project panel. */
+.projects-list { gap: 1rem; border: 0; background: transparent; }
+.project-card { margin: 0; padding: clamp(1rem,2.2vw,1.65rem); border: 1px solid rgba(23,23,21,.1); border-radius: 22px; background: rgba(255,255,255,.34); box-shadow: 0 10px 26px rgba(26,25,22,.055); }
+.project-card:hover { transform: translateY(-2px); border-color: rgba(23,23,21,.16); box-shadow: 0 15px 32px rgba(26,25,22,.09); }
+@media (max-width: 620px) {
+  .project-card { padding: .85rem; border-radius: 18px; }
+}
