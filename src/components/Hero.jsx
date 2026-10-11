@@ -19,7 +19,6 @@ const Hero = () => (
         <span className="hero-side-note">CURIOUS BY DEFAULT · BUILDING WITH INTENT</span>
       </div>
     </div>
-    <div className="hero-footer"><span>SCROLL TO EXPLORE</span></div>
   </section>
 );
 
