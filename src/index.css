@@ -1391,8 +1391,8 @@ body.menu-open { overflow: hidden; }
 .project-card:hover { transform: none; box-shadow: none; border-color: rgba(23,23,21,.5); }
 .project-media-col { width: 100%; min-width: 0; }
 .project-image-box { height: 245px; border: 0; border-radius: 0; background: #c7c5bc; }
-.project-img { filter: grayscale(1); mix-blend-mode: multiply; transition: filter .4s ease, transform .5s ease; }
-.project-card:hover .project-img { filter: grayscale(0); transform: scale(1.035); }
+.project-img { filter: none; mix-blend-mode: normal; transition: transform .5s ease; }
+.project-card:hover .project-img { transform: scale(1.035); }
 .project-link-btn { width: 100%; justify-content: space-between; border: 0; border-bottom: 1px solid rgba(23,23,21,.25); border-radius: 0; background: transparent; color: var(--ink); padding: .8rem 0; }
 .project-link-btn:hover { background: transparent; color: #505048; transform: none; box-shadow: none; }
 .project-content-col { padding: .4rem 0; }
@@ -1945,7 +1945,7 @@ body.menu-open { overflow: hidden; }
 .projects-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 2rem; margin-bottom: clamp(3rem,7vw,6rem); }
 .projects-heading .eyebrow { color: var(--muted-ink); margin-bottom: 1.6rem; }
 .projects-heading .section-title { color: var(--ink); font-size: clamp(2.7rem,6.5vw,6.8rem); line-height: .93; letter-spacing: -.075em; font-weight: 500; }
-.projects-heading .section-title em { color: #85857d; }
+.projects-heading .section-title em { color: #637b2d; }
 .projects-github-link { display: inline-flex; align-items: center; gap: .6rem; padding-bottom: .55rem; border-bottom: 1px solid rgba(23,23,21,.55); color: var(--ink); font-size: .8rem; font-weight: 600; white-space: nowrap; }
 .projects-github-link:hover { color: #67675f; }
 .project-title { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "SF Pro", "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: clamp(1.55rem,2.7vw,2.4rem); font-weight: 500; letter-spacing: -.065em; line-height: 1.05; color: var(--ink); }
@@ -2006,7 +2006,7 @@ body.menu-open { overflow: hidden; }
 @media (max-width: 620px) {
   .nav-container { width: 100%; max-width: none; padding: 0 1.25rem !important; }
   .menu-toggle { margin-left: auto; }
-  .expertise-art { align-self: center; width: 88%; }
+  .expertise-art { align-self: center; width: 78%; height: 320px; }
 }
 .menu-toggle { -webkit-tap-highlight-color: transparent; appearance: none; }
 .menu-toggle:active { background: transparent; }

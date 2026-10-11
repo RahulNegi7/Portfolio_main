@@ -51,7 +51,7 @@ const FractalTree = () => {
       let angleDegrees;
       if (window.innerWidth <= 900) {
         const scrollFactor = Math.min(window.scrollY / 600, 1);
-        angleDegrees = 55 + scrollFactor * 35 + Math.sin(time) * 35;
+        angleDegrees = 45 + scrollFactor * 10 + Math.sin(time) * 35;
       } else {
         angleDegrees = 55 + Math.sin(time) * 35;
       }
