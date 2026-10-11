@@ -43,17 +43,16 @@ const Projects = () => {
   return (
     <section id="projects" className="section section-dark">
       <div className="container">
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '3rem', flexWrap: 'wrap', gap: '1rem' }}>
+        <div className="projects-heading">
           <div data-aos="fade-up">
-            <p style={{ fontWeight: '600', marginBottom: '0.5rem', color: '#43cea2' }}>Featured Work</p>
-            <h2 className="section-title" style={{ margin: 0 }}>My Projects</h2>
+            <p className="eyebrow">Selected work / 04</p>
+            <h2 className="section-title">Projects with<br /><em>purpose.</em></h2>
           </div>
           <a 
             href="https://github.com/RahulNegi7" 
             target="_blank" 
             rel="noopener noreferrer" 
-            className="btn-grad"
-            style={{ display: 'inline-flex', alignItems: 'center', textDecoration: 'none' }}
+            className="projects-github-link"
           >
             <Github size={18} style={{ marginRight: '8px' }} />
             Visit My GitHub

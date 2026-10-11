@@ -1,43 +1,90 @@
-import React from 'react';
-import { Smartphone, Layout, Database, Server } from 'lucide-react';
+import React, { useEffect, useRef } from 'react';
+import { Braces, Eye, Layers3, Server } from 'lucide-react';
 
-const expertiseItems = [
-  { title: 'Responsive Design', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.', icon: <Smartphone size={40} color="var(--accent-purple)" /> },
-  { title: 'Front-End Frameworks', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.', icon: <Layout size={40} color="var(--accent-purple)" /> },
-  { title: 'Backend Development', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.', icon: <Server size={40} color="var(--accent-purple)" /> },
-  { title: 'Database Optimization', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.', icon: <Database size={40} color="var(--accent-purple)" /> }
+const FractalTree = () => {
+  const canvasRef = useRef(null);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    const context = canvas?.getContext('2d');
+    if (!canvas || !context) return undefined;
+
+    let frameId;
+    let width = 0;
+    let height = 0;
+    let time = 0;
+    const pixelRatio = Math.min(window.devicePixelRatio || 1, 2);
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    const resize = () => {
+      const bounds = canvas.getBoundingClientRect();
+      width = bounds.width;
+      height = bounds.height;
+      canvas.width = Math.round(width * pixelRatio);
+      canvas.height = Math.round(height * pixelRatio);
+      context.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
+    };
+
+    const branch = (x, y, length, angle, spread, depth) => {
+      if (length < 4 || depth > 10) return;
+      const endX = x + Math.sin(angle) * length;
+      const endY = y - Math.cos(angle) * length;
+      context.lineWidth = Math.max(0.65, depth * 0.19);
+      context.beginPath();
+      context.moveTo(x, y);
+      context.lineTo(endX, endY);
+      context.stroke();
+      branch(endX, endY, length * 0.68, angle - spread, spread, depth + 1);
+      branch(endX, endY, length * 0.68, angle + spread, spread, depth + 1);
+    };
+
+    const draw = () => {
+      context.clearRect(0, 0, width, height);
+      context.strokeStyle = 'rgba(35, 36, 31, 0.72)';
+      context.lineCap = 'round';
+      const sway = reduceMotion ? 0 : Math.sin(time) * 0.13;
+      const spread = 0.43 + (window.scrollY / Math.max(document.documentElement.scrollHeight - window.innerHeight, 1)) * 0.15;
+      const trunkLength = Math.min(height * 0.38, 122);
+      const rootX = width * 0.53;
+      const rootY = height - 12;
+      context.lineWidth = 2;
+      context.beginPath();
+      context.moveTo(rootX, rootY);
+      context.lineTo(rootX, rootY - trunkLength);
+      context.stroke();
+      branch(rootX, rootY - trunkLength, trunkLength * 0.78, sway, spread, 1);
+      if (!reduceMotion) {
+        time += 0.012;
+        frameId = window.requestAnimationFrame(draw);
+      }
+    };
+
+    resize();
+    draw();
+    window.addEventListener('resize', resize);
+    return () => {
+      window.removeEventListener('resize', resize);
+      window.cancelAnimationFrame(frameId);
+    };
+  }, []);
+
+  return <canvas ref={canvasRef} className="expertise-tree-canvas" aria-label="Animated fractal tree illustration" role="img" />;
+};
+
+const items = [
+  { number: '01', title: 'Frontend craft', text: 'Building responsive interfaces with care for the details, from layout and motion to the final interaction.', icon: <Layers3 /> },
+  { number: '02', title: 'Full stack thinking', text: 'Connecting clean user experiences to reliable APIs, data models, and the systems behind them.', icon: <Braces /> },
+  { number: '03', title: 'Computer vision', text: 'Exploring real time interaction through gaze tracking, facial landmarks, and accessible input.', icon: <Eye /> },
+  { number: '04', title: 'Tools & systems', text: 'Working across Java, React, Python, databases, and the practical tooling that brings products to life.', icon: <Server /> },
 ];
 
-const Expertise = () => {
-  return (
-    <section id="expertise" className="section section-white">
-      <div className="container">
-        <h2 className="section-title">My Expertise</h2>
-        
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
-          {expertiseItems.map((item, index) => (
-            <div key={index} style={{ 
-              background: 'var(--bg-dark)', 
-              padding: '2.5rem 2rem', 
-              borderRadius: '10px', 
-              transition: 'all 0.3s ease',
-              border: '1px solid rgba(255,255,255,0.05)',
-              borderBottom: '4px solid transparent'
-            }}
-            onMouseEnter={(e) => { e.currentTarget.style.borderBottom = '4px solid var(--accent-purple)'; e.currentTarget.style.transform = 'translateY(-5px)'; }}
-            onMouseLeave={(e) => { e.currentTarget.style.borderBottom = '4px solid transparent'; e.currentTarget.style.transform = 'translateY(0)'; }}
-            >
-              <div style={{ background: 'var(--bg-light)', border: '1px solid rgba(255,255,255,0.1)', width: '70px', height: '70px', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.5rem', boxShadow: '0 4px 10px rgba(0,0,0,0.5)' }}>
-                {item.icon}
-              </div>
-              <h3 style={{ fontSize: '1.4rem', marginBottom: '1rem' }}>{item.title}</h3>
-              <p style={{ color: 'var(--text-muted)' }}>{item.description}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-};
+const Expertise = () => (
+  <section id="expertise" className="section expertise-section">
+    <div className="container">
+      <div className="section-heading"><p className="eyebrow">What I work on / 02</p><h2 className="section-title">Curiosity, made<br /><em>practical.</em></h2><div className="expertise-heading-side"><p className="section-intro">I like turning interesting problems into clear, useful experiences.</p><div className="expertise-art"><FractalTree /><span>GROWTH THROUGH<br />EXPERIMENTATION</span></div></div></div>
+      <div className="expertise-grid">{items.map((item) => <article className="expertise-card" key={item.number}><div className="expertise-card-top"><span>{item.number}</span>{item.icon}</div><h3>{item.title}</h3><p>{item.text}</p></article>)}</div>
+    </div>
+  </section>
+);
 
 export default Expertise;
