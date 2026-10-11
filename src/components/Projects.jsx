@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { ExternalLink, Github } from 'lucide-react';
 
 const projects = [
@@ -40,6 +40,50 @@ const projects = [
 ];
 
 const Projects = () => {
+  const scrollWordRef = useRef(null);
+
+  useEffect(() => {
+    const word = scrollWordRef.current;
+    const section = word?.closest('#projects');
+    if (!word || !section) return undefined;
+
+    let frame = 0;
+    const updateScrollWord = () => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(() => {
+        const sectionBounds = section.getBoundingClientRect();
+        const viewportHeight = window.innerHeight;
+        const inRange = sectionBounds.top < viewportHeight * 0.9 && sectionBounds.bottom > viewportHeight * 0.5;
+
+        if (!inRange) {
+          word.classList.remove('is-active');
+          word.style.opacity = '';
+          return;
+        }
+
+        const riseProgress = Math.max(0, Math.min(1, (viewportHeight * 0.9 - sectionBounds.top) / (viewportHeight * 0.4)));
+        const exitProgress = Math.max(0, Math.min(1, (sectionBounds.bottom - viewportHeight * 0.5) / (viewportHeight * 0.3)));
+        word.style.top = `${viewportHeight * (0.9 - riseProgress * 0.4)}px`;
+        word.style.opacity = `${0.34 * exitProgress}`;
+        const wordBounds = word.getBoundingClientRect();
+        const split = Math.max(0, Math.min(100, ((sectionBounds.top - wordBounds.top) / wordBounds.height) * 100));
+        word.style.setProperty('--black-stop', `${Math.max(0, split - 8)}%`);
+        word.style.setProperty('--white-stop', `${Math.min(100, split + 8)}%`);
+        word.classList.add('is-active');
+      });
+    };
+
+    updateScrollWord();
+    window.addEventListener('scroll', updateScrollWord, { passive: true });
+    window.addEventListener('resize', updateScrollWord);
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener('scroll', updateScrollWord);
+      window.removeEventListener('resize', updateScrollWord);
+      word.classList.remove('is-active');
+    };
+  }, []);
+
   return (
     <section id="projects" className="section section-dark">
       <div className="container">
@@ -59,6 +103,7 @@ const Projects = () => {
           </a>
         </div>
 
+        <div className="projects-scroll-word" ref={scrollWordRef} aria-hidden="true">PROJECTS</div>
         <div className="projects-list">
           {projects.map((project, index) => (
             <div key={index} data-aos="fade-up" className="project-card" style={{ '--reveal-delay': `${index * 130}ms` }}>

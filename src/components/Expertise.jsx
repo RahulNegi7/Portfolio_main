@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { Braces, Eye, Layers3, Server } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 
 const FractalTree = () => {
   const canvasRef = useRef(null);
@@ -86,19 +86,21 @@ const FractalTree = () => {
 };
 
 const items = [
-  { title: 'Frontend craft', text: 'Building responsive interfaces with care for the details, from layout and motion to the final interaction.', icon: <Layers3 /> },
-  { title: 'Full stack thinking', text: 'Connecting clean user experiences to reliable APIs, data models, and the systems behind them.', icon: <Braces /> },
-  { title: 'Computer vision', text: 'Exploring real time interaction through gaze tracking, facial landmarks, and accessible input.', icon: <Eye /> },
-  { title: 'Tools & systems', text: 'Working across Java, React, Python, databases, and the practical tooling that brings products to life.', icon: <Server /> },
+  { title: 'Frontend craft', text: 'Building responsive interfaces with care for the details, from layout and motion to the final interaction.' },
+  { title: 'Full stack thinking', text: 'Connecting clean user experiences to reliable APIs, data models, and the systems behind them.' },
+  { title: 'Computer vision', text: 'Exploring real time interaction through gaze tracking, facial landmarks, and accessible input.' },
+  { title: 'Tools & systems', text: 'Working across Java, React, Python, databases, and the practical tooling that brings products to life.' },
 ];
 
-const Expertise = () => (
+const Expertise = () => {
+  return (
   <section id="expertise" className="section expertise-section">
       <div className="container">
       <div className="section-heading"><p className="eyebrow">What I work on</p><h2 className="section-title">Curiosity, made<br /><em>practical.</em></h2><div className="expertise-heading-side"><div className="expertise-art"><FractalTree /></div><div className="expertise-caption"><p>I like turning interesting problems into clear, useful experiences.</p><span>Animated fractal tree illustration</span></div></div></div>
-      <div className="expertise-grid">{items.map((item, index) => <article className="expertise-card" key={item.title} style={{ '--reveal-delay': `${index * 110}ms` }}><div className="expertise-card-top">{item.icon}</div><h3>{item.title}</h3><p>{item.text}</p></article>)}</div>
+      <div className="expertise-grid">{items.map((item, index) => <article className="expertise-card" key={item.title} style={{ '--reveal-delay': `${index * 110}ms` }}><div className="expertise-card-top"><span className="expertise-card-rule" /></div><h3>{item.title}</h3><p>{item.text}</p><ArrowUpRight className="expertise-card-arrow" aria-hidden="true" /></article>)}</div>
     </div>
   </section>
-);
+  );
+};
 
 export default Expertise;

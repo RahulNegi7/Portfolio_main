@@ -15,7 +15,8 @@ function App() {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add('is-revealed');
-          observer.unobserve(entry.target);
+        } else {
+          entry.target.classList.remove('is-revealed');
         }
       });
     }, { threshold: 0.14 });

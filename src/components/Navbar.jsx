@@ -27,7 +27,7 @@ const Navbar = () => {
     <>
       <header className={`navbar ${scrolled ? 'scrolled' : ''} ${open ? 'menu-is-open' : ''}`}>
         <div className="nav-container">
-          <a href="#home" className="nav-logo" onClick={() => setOpen(false)}><span className="logo-mark">R</span><span>Rahul Negi</span></a>
+          <a href="#home" className="nav-logo" onClick={() => setOpen(false)}><span className="logo-mark"><img src="/rahul-logo-source.webp" alt="" /></span><span>Rahul</span></a>
           <a href="#contact" className="nav-availability">Available for opportunities</a>
           <button className={`menu-toggle ${open ? 'is-open' : ''}`} type="button" aria-label={open ? 'Close navigation menu' : 'Open navigation menu'} aria-expanded={open} onClick={() => setOpen(!open)}>
             {open ? <X size={21} /> : <span className="menu-lines"><i /><i /></span>}
