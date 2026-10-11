@@ -10,7 +10,7 @@ const projects = [
       'Implemented user-level task isolation, input validation, centralized exception handling, and a layered Controller–Service–Repository architecture using Spring Data JPA.',
       'Containerized MySQL using Docker Compose and developed REST endpoints for authentication and task CRUD operations.'
     ],
-    link: 'https://github.com/RahulNegi7',
+    link: 'https://github.com/RahulNegi7/Secure-task-management-api',
     image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&auto=format&fit=crop&q=80',
     tags: ['Java', 'Spring Boot', 'REST API', 'JWT', 'MySQL', 'Docker', 'Spring Data JPA']
   },
@@ -21,7 +21,7 @@ const projects = [
       'Developed a real-time computer vision–based HCI system enabling hands-free cursor control using webcam input, leveraging facial landmark detection and iris tracking to accurately map gaze direction to screen coordinates.',
       'Implemented Eye Aspect Ratio (EAR)-based blink detection with smoothing and performance optimization techniques, achieving ~35 ms latency, up to 92 FPS, and 96.7% accuracy for reliable real-time interaction.'
     ],
-    link: 'https://github.com/RahulNegi7',
+    link: 'https://github.com/RahulNegi7/Eye_and_Motion_mapping',
     image: 'https://images.unsplash.com/photo-1507146153580-69a1fe6d8aa1?w=800&auto=format&fit=crop&q=80',
     tags: ['Python', 'OpenCV', 'MediaPipe', 'PyAutoGUI', 'Computer Vision', 'HCI']
   },
@@ -33,7 +33,7 @@ const projects = [
       'Implemented on-chain logic for campaign creation, funding, goal validation, withdrawals, and refunds, ensuring transparent & trustless transactions.',
       'Designed an intuitive UI for creating and contributing to crowdfunding campaigns with seamless blockchain interactions.'
     ],
-    link: 'https://github.com/RahulNegi7',
+    link: 'https://github.com/RahulNegi7/crowd-stacks-main-2',
     image: 'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=800&auto=format&fit=crop&q=80',
     tags: ['Next.js', 'React', 'TypeScript', 'Node.js', 'Clarity', 'Stacks Blockchain', 'Web3']
   }
