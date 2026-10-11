@@ -62,7 +62,7 @@ const FractalTree = () => {
       context.lineCap = 'round';
       context.save();
       context.translate(width / 2, height - 12);
-      const trunkLength = Math.min(150, height / 3.5);
+      const trunkLength = Math.min(150, height / 3.1);
       context.beginPath();
       context.moveTo(0, 0);
       context.lineTo(0, -trunkLength);
@@ -95,8 +95,8 @@ const items = [
 const Expertise = () => (
   <section id="expertise" className="section expertise-section">
     <div className="container">
-      <div className="section-heading"><p className="eyebrow">What I work on</p><h2 className="section-title">Curiosity, made<br /><em>practical.</em></h2><div className="expertise-heading-side"><p className="section-intro">I like turning interesting problems into clear, useful experiences.</p><div className="expertise-art"><FractalTree /></div></div></div>
-      <div className="expertise-grid">{items.map((item) => <article className="expertise-card" key={item.number}><div className="expertise-card-top"><span>{item.number}</span>{item.icon}</div><h3>{item.title}</h3><p>{item.text}</p></article>)}</div>
+      <div className="section-heading"><p className="eyebrow">What I work on</p><h2 className="section-title">Curiosity, made<br /><em>practical.</em></h2><div className="expertise-heading-side"><div className="expertise-art"><FractalTree /></div><div className="expertise-caption"><p>I like turning interesting problems into clear, useful experiences.</p><span>Animated fractal tree illustration</span></div></div></div>
+      <div className="expertise-grid">{items.map((item, index) => <article className="expertise-card" key={item.number} style={{ '--reveal-delay': `${index * 110}ms` }}><div className="expertise-card-top"><span>{item.number}</span>{item.icon}</div><h3>{item.title}</h3><p>{item.text}</p></article>)}</div>
     </div>
   </section>
 );

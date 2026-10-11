@@ -61,7 +61,7 @@ const Projects = () => {
 
         <div className="projects-list">
           {projects.map((project, index) => (
-            <div key={index} data-aos="fade-up" className="project-card">
+            <div key={index} data-aos="fade-up" className="project-card" style={{ '--reveal-delay': `${index * 130}ms` }}>
               {/* Left Column: Image with Visit Website / GitHub link right below it */}
               <div className="project-media-col">
                 <div className="project-image-box">
