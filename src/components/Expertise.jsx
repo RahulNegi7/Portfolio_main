@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from 'react';
-import { ArrowUpRight } from 'lucide-react';
 
 const FractalTree = () => {
   const canvasRef = useRef(null);
@@ -97,7 +96,7 @@ const Expertise = () => {
   <section id="expertise" className="section expertise-section">
       <div className="container">
       <div className="section-heading"><p className="eyebrow">What I work on</p><h2 className="section-title">Curiosity, made<br /><em>practical.</em></h2><div className="expertise-heading-side"><div className="expertise-art"><FractalTree /></div><div className="expertise-caption"><p>I like turning interesting problems into clear, useful experiences.</p><span>Animated fractal tree illustration</span></div></div></div>
-      <div className="expertise-grid">{items.map((item, index) => <article className="expertise-card" key={item.title} style={{ '--reveal-delay': `${index * 110}ms` }}><div className="expertise-card-top"><span className="expertise-card-rule" /></div><h3>{item.title}</h3><p>{item.text}</p><ArrowUpRight className="expertise-card-arrow" aria-hidden="true" /></article>)}</div>
+      <div className="expertise-grid">{items.map((item, index) => <article className="expertise-card" key={item.title} style={{ '--reveal-delay': `${index * 110}ms` }}><div className="expertise-card-top"><span className="expertise-card-rule" /></div><h3>{item.title}</h3><p>{item.text}</p></article>)}</div>
     </div>
   </section>
   );
