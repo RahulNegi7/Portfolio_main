@@ -67,6 +67,16 @@ The server supports Hot Module Replacement (HMR), so any code changes you save w
 
 ## 📦 Production Build & Preview
 
+### Portfolio view counter
+
+The footer counter uses GoatCounter to count pageviews. The public endpoint is configured in `src/components/ViewCounter.jsx`. If you want to override it for a deployment, set:
+
+```text
+VITE_GOATCOUNTER_URL=https://YOUR-CODE.goatcounter.com/count
+```
+
+For local development, put the variable in a `.env.local` file at the project root. The endpoint is public and contains no secret. Enable **Allow adding visitor counts on your website** in your GoatCounter site settings so the displayed total is available.
+
 ### Build for Production
 
 To create an optimized production build in the `dist/` directory:
