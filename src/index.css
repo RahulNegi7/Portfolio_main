@@ -1425,6 +1425,12 @@ body.menu-open { overflow: hidden; }
 .contact-links { display: flex; gap: 1.5rem; }
 .contact-links a { display: inline-flex; align-items: center; gap: .5rem; padding: .65rem 0; border-bottom: 1px solid rgba(23,23,21,.45); font-size: .82rem; font-weight: 600; }
 .contact-links a:hover { border-color: var(--ink); }
+.contact-links .social-link { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; padding: 0; border: 0; border-radius: 50%; transition: transform .25s ease, background-color .25s ease; }
+.contact-links .social-link:hover { border: 0; transform: translateY(-4px); }
+.social-link--linkedin { color: #0a66c2; }
+.social-link--github { color: #24292f; }
+.social-link--instagram { color: #d9468f; }
+.contact-links .social-link:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
 .site-footer { padding: 1.25rem 0; background: var(--night); color: #aaa9a2; }
 .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; font-size: .68rem; }
 .footer-inner a { display: inline-flex; align-items: center; gap: .4rem; color: #efeee9; }
